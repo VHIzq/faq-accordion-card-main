@@ -1,0 +1,77 @@
+@import url(reset.css);
+@import url(config.css);
+
+* {
+  font-size: var(--fs-default);
+}
+
+body {
+  background: linear-gradient(45deg, var(--clr-bkg-blue), var(--clr-bkg-violet));
+  display: grid;
+  place-items: center;
+  margin: 2rem;
+}
+
+.divider {
+  width: 100%;
+  color: var(--clr-divider);
+}
+
+.faq {
+  background-color: whitesmoke;
+  max-width: 370px;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  font-family: var(--ff-default);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq h1 {
+  text-align: center;
+}
+
+.faq .label {
+  font-size: 1.3rem;
+}
+
+.faq .label::before{
+  content: '+';
+  color: var(--clr-text-red);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -5px;
+  font-size: 1.75rem;
+}
+
+.faq .content{
+  font-size: 1.1rem;
+  position: relative;
+  text-align: justify;
+  height: 0;
+  overflow: hidden; 
+  transition: .5s;
+}
+
+.container {
+  position: relative;
+}
+
+.container .label {
+  position: relative;
+  cursor: pointer;
+}
+
+.faq .container.active .content{
+  height: 100px;
+}
+
+.faq .container.active .label::before{
+  content: '-';
+  font-size: 1.75rem;
+}
+
+
+
