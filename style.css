@@ -17,6 +17,12 @@ body {
   color: var(--clr-divider);
 }
 
+.faq__img img:nth-child(2) {
+  position: relative;
+  top: -70px;
+  height: auto;
+}
+
 .faq {
   background-color: whitesmoke;
   max-width: 370px;
@@ -28,50 +34,73 @@ body {
   align-items: center;
 }
 
-.faq h1 {
+@media(min-width:900px) {
+  .faq {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 700px;
+  }
+  .faq__img {
+    width: 100%;
+    position: relative;
+    left: -70px;
+  }
+  .faq__questions h1{
+    display: flex;
+  }
+}
+
+.faq__questions h1 {
   text-align: center;
+  font-size: 3rem;
 }
 
 .faq .label {
   font-size: 1.3rem;
 }
 
-.faq .label::before{
-  content: '+';
+.faq .label::before {
+  content: url(/images/icon-arrow-down.svg);
   color: var(--clr-text-red);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: -5px;
+  right: -2px;
   font-size: 1.75rem;
+  font-weight: bolder;
 }
 
-.faq .content{
+.faq .content {
   font-size: 1.1rem;
   position: relative;
   text-align: justify;
   height: 0;
-  overflow: hidden; 
+  overflow: hidden;
   transition: .5s;
+  width: 90%;
 }
 
-.container {
+.faq__questions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.faq__questions .container {
   position: relative;
 }
 
-.container .label {
+.faq__questions .label {
   position: relative;
   cursor: pointer;
 }
 
-.faq .container.active .content{
-  height: 100px;
+.faq .container.active .content {
+  height: 60px;
 }
 
-.faq .container.active .label::before{
-  content: '-';
+.faq .container.active .label::before {
+  content: url(/images/icon-arrow-down.svg);
+  transform: rotate(180deg);
   font-size: 1.75rem;
 }
-
-
-
