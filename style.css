@@ -6,7 +6,7 @@
 }
 
 body {
-  background: linear-gradient(70deg, var(--clr-bkg-blue), var(--clr-bkg-violet));
+  background: var(--clr-bkg-violet);
   display: grid;
   place-items: center;
   margin: 2rem;
